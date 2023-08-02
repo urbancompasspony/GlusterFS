@@ -1,0 +1,15 @@
+#################################
+# AUTOMATIC SPLIT BRAIN SOLVER! #
+#################################
+
+$ sudo gluster volume set help | grep -A3 cluster.favorite-child-policy
+
+$ sudo gluster volume set volume01 cluster.favorite-child-policy mtime
+
+Option: cluster.favorite-child-policy
+Default Value: none
+Description: This option can be used to automatically resolve split-brains using various policies without user intervention.
+"size" picks the file with the biggest size as the source. "ctime" and "mtime" pick the file with the latest ctime and mtime respectively as the source. 
+"majority" picks a file with identical mtime and size in more than half the number of bricks in the replica.
+
+MORE: https://docs.gluster.org/en/latest/Troubleshooting/resolving-splitbrain/#where-do-i-start
