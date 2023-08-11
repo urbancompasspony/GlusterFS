@@ -1,3 +1,4 @@
+$ gluster volume heal <VOLNAME> info split-brain
 $ gluster volume heal <VOLNAME> info
 
 a) 'Is in split-brain'
@@ -5,9 +6,6 @@ A file in data or metadata split-brain will be listed with " - Is in split-brain
 
 b) 'Is possibly undergoing heal'
 When the heal info command is run, it (or to be more specific, the 'glfsheal' binary that is executed when you run the command) takes locks on each file to find if it needs healing. However, if the self-heal daemon had already started healing the file, it would have taken locks which glfsheal wouldn't be able to acquire. In such a case, it could print this message. Another possible case could be multiple glfsheal processes running simultaneously (e.g. multiple users ran a heal info command at the same time) and competing for same lock.
-
-$ gluster volume heal <VOLNAME> info split-brain
-$ gluster volume heal <VOLNAME> info
 
 SOLUTIONS:
 
