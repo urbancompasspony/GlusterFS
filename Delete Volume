@@ -1,0 +1,4 @@
+
+$ sudo gluster volume stop VOLUME01
+
+$ sudo gluster volume delete VOLUME1
